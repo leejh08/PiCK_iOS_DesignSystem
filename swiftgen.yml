@@ -1,0 +1,9 @@
+xcassets:
+  inputs:
+    - PiCK_iOS_DesignSystem/Resources/Color.xcassets
+  outputs:
+    templateName: swift5
+    output: PiCK_iOS_DesignSystem/Sources/Color/Color+Generated.swift
+    params:
+      forceProvidesNamespaces: true
+      enumName: PiCKColor
