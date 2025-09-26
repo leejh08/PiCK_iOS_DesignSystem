@@ -1,9 +1,17 @@
 xcassets:
-  inputs:
-    - Resources/Color.xcassets
-  outputs:
-    templateName: swift5
-    output: Sources/Color/Color+Generated.swift
-    params:
-      forceProvidesNamespaces: true
-      enumName: PiCKColor
+  - inputs:
+      - Resources/Color.xcassets
+    outputs:
+      templateName: swift5
+      output: Sources/Color/Color+Generated.swift
+      params:
+        forceProvidesNamespaces: true
+        enumName: PiCKColor
+  - inputs:
+      - Resources/Image.xcassets
+    outputs:
+      templateName: swift5
+      output: Sources/Image/Image+Generated.swift
+      params:
+        forceProvidesNamespaces: true
+        enumName: PiCKImage
