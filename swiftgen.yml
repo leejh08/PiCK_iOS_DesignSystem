@@ -15,3 +15,11 @@ xcassets:
       params:
         forceProvidesNamespaces: true
         enumName: PiCKImage
+fonts:
+  inputs:
+    - Resources/Font/WantedSans/otf
+  outputs:
+    templateName: swift5
+    output: Sources/Font/Font+Generated.swift
+    params:
+      enumName: DesignSystemFontFamily
