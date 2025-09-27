@@ -61,7 +61,7 @@ internal enum PiCKColor {
 
 // MARK: - Implementation Details
 
-public final class ColorAsset {
+public struct ColorAsset {
   public fileprivate(set) var name: String
 
   #if os(macOS)
@@ -70,13 +70,12 @@ public final class ColorAsset {
   public typealias Color = UIColor
   #endif
 
-  @available(iOS 11.0, tvOS 11.0, watchOS 4.0, macOS 10.13, *)
-  public private(set) lazy var color: Color = {
+  public var color: Color {
     guard let color = Color(asset: self) else {
       fatalError("Unable to load color asset named \(name).")
     }
     return color
-  }()
+  }
 
   #if os(iOS) || os(tvOS)
   @available(iOS 11.0, tvOS 11.0, *)
@@ -91,14 +90,10 @@ public final class ColorAsset {
 
   #if canImport(SwiftUI)
   @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
-  public private(set) lazy var swiftUIColor: SwiftUI.Color = {
+  public var swiftUIColor: SwiftUI.Color {
     SwiftUI.Color(asset: self)
-  }()
-  #endif
-
-  public init(name: String) {
-    self.name = name
   }
+  #endif
 }
 
 internal extension ColorAsset.Color {
