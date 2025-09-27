@@ -1,7 +1,7 @@
 import SwiftUI
 
 extension DesignSystemAsset.Image {
-    var swiftUIImage: Image {
+    public var swiftUIImage: Image {
         Image(asset: self)
     }
 }
