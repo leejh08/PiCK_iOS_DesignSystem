@@ -1,6 +1,6 @@
 xcassets:
   - inputs:
-      - Resources/Color.xcassets
+      - Sources/PiCK_iOS_DesignSystem/Resources/Color.xcassets
     outputs:
       templateName: swift5
       output: Sources/Color/Color+Generated.swift
@@ -8,7 +8,7 @@ xcassets:
         forceProvidesNamespaces: true
         enumName: PiCKColor
   - inputs:
-      - Resources/Image.xcassets
+      - Sources/PiCK_iOS_DesignSystem/Resources/Image.xcassets
     outputs:
       templateName: swift5
       output: Sources/Image/Image+Generated.swift
@@ -17,7 +17,7 @@ xcassets:
         enumName: PiCKImage
 fonts:
   inputs:
-    - Resources/Font/WantedSans/otf
+    - Sources/PiCK_iOS_DesignSystem/Resources/Font/WantedSans/otf
   outputs:
     templateName: swift5
     output: Sources/Font/Font+Generated.swift
