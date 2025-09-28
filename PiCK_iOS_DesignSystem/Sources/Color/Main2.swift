@@ -1,11 +1,11 @@
 import SwiftUI
 
 public extension Color {
-    struct Main { }
+    struct Main2 { }
 }
 
 // MARK: - Main Colors (Light Mode)
-public extension Color.Main {
+public extension Color.Main2 {
     static let main50:  Color = #colorLiteral(red: 0.9725490196, green: 0.9176470588, blue: 0.9960784314, alpha: 1).color
     static let main100: Color = #colorLiteral(red: 0.8784313725, green: 0.8, blue: 0.9960784314, alpha: 1).color
     static let main200: Color = #colorLiteral(red: 0.7960784314, green: 0.7254901961, blue: 0.9921568627, alpha: 1).color
@@ -19,7 +19,7 @@ public extension Color.Main {
 }
 
 // MARK: - Main Colors (Dark Mode)
-public extension Color.Main {
+public extension Color.Main2 {
     static let darkMain50:  Color = #colorLiteral(red: 0.5921568627, green: 0.4392156863, blue: 0.9450980392, alpha: 1).color
     static let darkMain100: Color = #colorLiteral(red: 0.6509803922, green: 0.4235294118, blue: 0.9529411765, alpha: 1).color
     static let darkMain200: Color = #colorLiteral(red: 0.6823529412, green: 0.5882352941, blue: 0.9607843137, alpha: 1).color

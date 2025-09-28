@@ -34,16 +34,16 @@ import SwiftUI
             ColorSectionView(
                 title: "Main (Light)",
                 colors: [
-                    ("Main 50", Color.Main.main50),
-                    ("Main 100", Color.Main.main100),
-                    ("Main 200", Color.Main.main200),
-                    ("Main 300", Color.Main.main300),
-                    ("Main 400", Color.Main.main400),
-                    ("Main 500", Color.Main.main500),
-                    ("Main 600", Color.Main.main600),
-                    ("Main 700", Color.Main.main700),
-                    ("Main 800", Color.Main.main800),
-                    ("Main 900", Color.Main.main900)
+                    ("Main 50", Color.Main2.main50),
+                    ("Main 100", Color.Main2.main100),
+                    ("Main 200", Color.Main2.main200),
+                    ("Main 300", Color.Main2.main300),
+                    ("Main 400", Color.Main2.main400),
+                    ("Main 500", Color.Main2.main500),
+                    ("Main 600", Color.Main2.main600),
+                    ("Main 700", Color.Main2.main700),
+                    ("Main 800", Color.Main2.main800),
+                    ("Main 900", Color.Main2.main900)
                 ]
             )
             
@@ -51,16 +51,16 @@ import SwiftUI
             ColorSectionView(
                 title: "Main (Dark)",
                 colors: [
-                    ("Dark Main 50", Color.Main.darkMain50),
-                    ("Dark Main 100", Color.Main.darkMain100),
-                    ("Dark Main 200", Color.Main.darkMain200),
-                    ("Dark Main 300", Color.Main.darkMain300),
-                    ("Dark Main 400", Color.Main.darkMain400),
-                    ("Dark Main 500", Color.Main.darkMain500),
-                    ("Dark Main 600", Color.Main.darkMain600),
-                    ("Dark Main 700", Color.Main.darkMain700),
-                    ("Dark Main 800", Color.Main.darkMain800),
-                    ("Dark Main 900", Color.Main.darkMain900)
+                    ("Dark Main 50", Color.Main2.darkMain50),
+                    ("Dark Main 100", Color.Main2.darkMain100),
+                    ("Dark Main 200", Color.Main2.darkMain200),
+                    ("Dark Main 300", Color.Main2.darkMain300),
+                    ("Dark Main 400", Color.Main2.darkMain400),
+                    ("Dark Main 500", Color.Main2.darkMain500),
+                    ("Dark Main 600", Color.Main2.darkMain600),
+                    ("Dark Main 700", Color.Main2.darkMain700),
+                    ("Dark Main 800", Color.Main2.darkMain800),
+                    ("Dark Main 900", Color.Main2.darkMain900)
                 ]
             )
             
