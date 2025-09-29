@@ -1,4 +1,5 @@
 import SwiftUI
+import ColorSync
 
 public struct PiCKTextPreview: View {
     public init() {}
