@@ -39,22 +39,19 @@ public struct PiCKTextField: View {
         VStack(alignment: .leading, spacing: 12) {
             if let titleText = titleText {
                 Text(titleText)
-                    .pickText(type: .label1)
-                    .foregroundColor(.Normal.black)
+                    .pickText(type: .label1, textColor: .Normal.black)
             }
             HStack {
                 if isSecure {
                     SecureField(placeholder, text: $text)
-                        .pickText(type: .caption1)
-                        .foregroundColor(.Normal.black)
+                        .pickText(type: .caption2, textColor: .Normal.black)
                         .autocapitalization(.none)
                         .disableAutocorrection(true)
                 } else {
                     TextField(placeholder, text: $text, onEditingChanged: { editing in
                         isEditing = editing
                     })
-                    .pickText(type: .caption1)
-                    .foregroundColor(.Normal.black)
+                    .pickText(type: .caption2, textColor: .Normal.black)
                     .autocapitalization(.none)
                     .disableAutocorrection(true)
                 }
@@ -63,16 +60,15 @@ public struct PiCKTextField: View {
                     Button(action: {
                         isSecure.toggle()
                     }) {
-                        Image(isSecure ? "eyeOff" : "eyeOn")
+                        Image(isSecure ? "eyeOff" : "eyeOn", bundle: .module)
                             .foregroundColor(.Normal.black)
                     }
                 } else if showVerification {
                     Button(action: {
                         verificationButtonTapped?()
                     }) {
-                        Text("인증코드")
-                            .pickText(type: .button2)
-                            .foregroundColor(.Main.main900)
+                        Text("인증 코드")
+                            .pickText(type: .button2, textColor: .Main.main900)
                             .padding(.horizontal, 12)
                             .padding(.vertical, 4)
                             .background(Color.Main.main50)
@@ -80,8 +76,7 @@ public struct PiCKTextField: View {
                     }
                 } else if showEmail {
                     Text("@dsm.hs.kr")
-                        .pickText(type: .caption2)
-                        .foregroundColor(.Gray.gray500)
+                        .pickText(type: .caption2, textColor: .Gray.gray500)
                 }
             }
             .padding(.horizontal, 16)
@@ -95,8 +90,7 @@ public struct PiCKTextField: View {
 
             if let errorMessage = errorMessage, !errorMessage.isEmpty {
                 Text(errorMessage)
-                    .pickText(type: .caption2)
-                    .foregroundColor(.Error.error)
+                    .pickText(type: .caption2, textColor: .Error.error)
                     .frame(maxWidth: .infinity, alignment: .trailing)
             }
         }
