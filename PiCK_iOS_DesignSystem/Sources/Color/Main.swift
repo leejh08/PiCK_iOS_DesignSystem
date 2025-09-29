@@ -4,7 +4,7 @@ public extension Color {
     struct Main { }
 }
 
-// MARK: - Main Colors (Light Mode)
+// MARK: - Main Colors
 public extension Color.Main {
     static let main50 = Color("main50", bundle: .module)
     static let main100 = Color("main100", bundle: .module)
