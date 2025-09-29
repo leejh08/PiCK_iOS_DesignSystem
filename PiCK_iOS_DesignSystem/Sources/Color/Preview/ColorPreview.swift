@@ -13,19 +13,19 @@ struct ColorPreviewContent: View {
                     ]
                 )
                 
-                // Background Colors
+                // Background Color
                 ColorSectionView(
                     title: "Background",
                     colors: [
-                        ("Light", Color.Background.background)
+                        ("BG", Color.Background.background)
                     ]
                 )
                 
-                // Error Colors
+                // Error Color
                 ColorSectionView(
                     title: "Error",
                     colors: [
-                        ("Light", Color.Error.error)
+                        ("Error", Color.Error.error)
                     ]
                 )
                 
