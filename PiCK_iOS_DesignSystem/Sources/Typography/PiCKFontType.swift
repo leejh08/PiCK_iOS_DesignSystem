@@ -59,8 +59,8 @@ extension PiCKFontType {
     var fontWeight: UIFont.Weight {
         switch self {
 
-        case .heading1, .heading2, .heading3, .heading4: return .semiBold
-        case .subTitle1, .subTitle2, .subTitle3: return .semiBold
+        case .heading1, .heading2, .heading3, .heading4: return .semibold
+        case .subTitle1, .subTitle2, .subTitle3: return .semibold
 
         case .body1, .body2, .body3: return .medium
 
@@ -68,7 +68,7 @@ extension PiCKFontType {
 
         case .label1, .label2: return .medium
 
-        case .button1, .button2: return .semiBold
+        case .button1, .button2: return .semibold
 
         }
     }
@@ -104,16 +104,16 @@ extension PiCKFontType {
     var defaultColor: Color {
         switch self {
 
-        case .heading1, .heading2, .heading3, .heading4: return .modeBlack
-        case .subTitle1, .subTitle2, .subTitle3: return .modeBlack
+        case .heading1, .heading2, .heading3, .heading4: return .Normal.black
+        case .subTitle1, .subTitle2, .subTitle3: return .Normal.black
 
-        case .body1, .body2, .body3: return .gray700
+        case .body1, .body2, .body3: return .Gray.gray700
 
-        case .caption1, .caption2: return .gray600
+        case .caption1, .caption2: return .Gray.gray600
 
-        case .label1, .label2: return .gray700
+        case .label1, .label2: return .Gray.gray700
 
-        case .button1, .button2: return .modeBlack
+        case .button1, .button2: return .Normal.black
 
         }
     }

@@ -69,15 +69,6 @@ public struct PiCKTextPreview: View {
                 
                 Divider()
                 
-                // With custom colors
-                Group {
-                    Text("Custom Color Example - Main500")
-                        .pickText(type: .heading1, textColor: .main500)
-                    
-                    Text("Custom Color Example - Error")
-                        .pickText(type: .body1, textColor: .error)
-                }
-                
             }
             .padding()
         }

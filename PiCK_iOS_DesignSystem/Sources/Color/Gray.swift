@@ -6,8 +6,8 @@ public extension Color {
 
 // MARK: - Gray Colors
 public extension Color.Gray {
-    static let gray50:  Color = #colorLiteral(red: 0.9803921569, green: 0.9803921569, blue: 0.9490196078, alpha: 1).color
-    static let gray100: Color = #colorLiteral(red: 0.8666666667, green: 0.8666666667, blue: 0.8039215686, alpha: 1).color
+    static let gray50:  Color = #colorLiteral(red: 0.9450980392, green: 0.9450980392, blue: 0.9490196078, alpha: 1).color
+    static let gray100: Color = #colorLiteral(red: 0.8666666667, green: 0.862745098, blue: 0.8666666667, alpha: 1).color
     static let gray200: Color = #colorLiteral(red: 0.7803921569, green: 0.7725490196, blue: 0.7803921569, alpha: 1).color
     static let gray300: Color = #colorLiteral(red: 0.6862745098, green: 0.6745098039, blue: 0.7058823529, alpha: 1).color
     static let gray400: Color = #colorLiteral(red: 0.6156862745, green: 0.6039215686, blue: 0.6274509804, alpha: 1).color

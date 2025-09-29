@@ -1,7 +1,7 @@
 import SwiftUI
 import UIKit
 
-public extension Text {
+public extension View {
     func pickText(type: PiCKFontType, textColor: Color) -> some View {
         ModifiedContent(content: self, modifier: PiCKText(type: type, textColor: textColor))
     }
@@ -19,7 +19,7 @@ struct PiCKText: ViewModifier {
         self.type = type
         self.textColor = textColor
 
-        if textColor == .modeWhite && type.fontWeight == .regular {
+        if textColor == .Normal.white && type.fontWeight == .regular {
             self.font = .systemFont(ofSize: type.fontSize, weight: .medium)
         } else {
             self.font = .systemFont(ofSize: type.fontSize, weight: type.fontWeight)

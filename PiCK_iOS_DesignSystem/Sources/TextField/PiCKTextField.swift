@@ -39,22 +39,22 @@ public struct PiCKTextField: View {
         VStack(alignment: .leading, spacing: 12) {
             if let titleText = titleText {
                 Text(titleText)
-                    .font(.pick(.label1))
-                    .foregroundColor(Color(asset: PiCKColor.ModeColor.modeBlack))
+                    .pickText(type: .label1)
+                    .foregroundColor(.Normal.black)
             }
             HStack {
                 if isSecure {
                     SecureField(placeholder, text: $text)
-                        .font(.pick(.caption1))
-                        .foregroundColor(Color(asset: PiCKColor.ModeColor.modeBlack))
+                        .pickText(type: .caption1)
+                        .foregroundColor(.Normal.black)
                         .autocapitalization(.none)
                         .disableAutocorrection(true)
                 } else {
                     TextField(placeholder, text: $text, onEditingChanged: { editing in
                         isEditing = editing
                     })
-                    .font(.pick(.caption1))
-                    .foregroundColor(Color(asset: PiCKColor.ModeColor.modeBlack))
+                    .pickText(type: .caption1)
+                    .foregroundColor(.Normal.black)
                     .autocapitalization(.none)
                     .disableAutocorrection(true)
                 }
@@ -63,30 +63,30 @@ public struct PiCKTextField: View {
                     Button(action: {
                         isSecure.toggle()
                     }) {
-                        Image(asset: isSecure ? PiCKImage.MainIcon.eyeOff : PiCKImage.MainIcon.eyeOn)
-                            .foregroundColor(Color(asset: PiCKColor.ModeColor.modeBlack))
+                        Image(isSecure ? "eyeOff" : "eyeOn")
+                            .foregroundColor(.Normal.black)
                     }
                 } else if showVerification {
                     Button(action: {
                         verificationButtonTapped?()
                     }) {
                         Text("인증코드")
-                            .font(.pick(.button2))
-                            .foregroundColor(Color(asset: PiCKColor.Main.main900))
+                            .pickText(type: .button2)
+                            .foregroundColor(.Main2.main900)
                             .padding(.horizontal, 12)
                             .padding(.vertical, 4)
-                            .background(Color(asset: PiCKColor.Main.main50))
+                            .background(Color.Main2.main50)
                             .cornerRadius(5)
                     }
                 } else if showEmail {
                     Text("@dsm.hs.kr")
-                        .font(.pick(.caption2))
-                        .foregroundColor(Color(asset: PiCKColor.Gray.gray500))
+                        .pickText(type: .caption2)
+                        .foregroundColor(.Gray.gray500)
                 }
             }
             .padding(.horizontal, 16)
             .frame(height: 48)
-            .background(Color(asset: PiCKColor.Gray.gray50))
+            .background(Color.Gray.gray50)
             .cornerRadius(4)
             .overlay(
                 RoundedRectangle(cornerRadius: 4)
@@ -95,8 +95,8 @@ public struct PiCKTextField: View {
 
             if let errorMessage = errorMessage, !errorMessage.isEmpty {
                 Text(errorMessage)
-                    .font(.pick(.caption2))
-                    .foregroundColor(Color(asset: PiCKColor.Error.error))
+                    .pickText(type: .caption2)
+                    .foregroundColor(.Error.light)
                     .frame(maxWidth: .infinity, alignment: .trailing)
             }
         }
@@ -104,9 +104,9 @@ public struct PiCKTextField: View {
 
     private var borderColor: Color {
         if errorMessage != nil {
-            return Color(asset: PiCKColor.Error.error)
+            return .Error.light
         } else if isEditing {
-            return Color(asset: PiCKColor.Main.main500)
+            return .Main2.main500
         } else {
             return .clear
         }
