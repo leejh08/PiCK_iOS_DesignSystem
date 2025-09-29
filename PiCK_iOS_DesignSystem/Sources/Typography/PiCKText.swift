@@ -18,27 +18,41 @@ struct PiCKText: ViewModifier {
     init(type: PiCKFontType, textColor: Color) {
         self.type = type
         self.textColor = textColor
-
         if textColor == .Normal.white && type.fontWeight == .regular {
-            self.font = .systemFont(ofSize: type.fontSize, weight: .medium)
+            self.font = Self.getPretendardFont(size: type.fontSize, weight: .medium)
         } else {
-            self.font = .systemFont(ofSize: type.fontSize, weight: type.fontWeight)
+            self.font = Self.getPretendardFont(size: type.fontSize, weight: type.fontWeight)
         }
     }
     init(type: PiCKFontType) {
         self.type = type
-        self.font = .systemFont(ofSize: type.fontSize, weight: type.fontWeight)
         self.textColor = type.defaultColor
+        self.font = Self.getPretendardFont(size: type.fontSize, weight: type.fontWeight)
     }
 
     func body(content: Content) -> some View {
         content
             .font(Font(font))
-            .lineSpacing(type.lineHeight - font.lineHeight)
-            .padding(.vertical, (type.lineHeight - font.lineHeight) / 2)
             .foregroundColor(textColor)
     }
 
+}
+
+private extension PiCKText {
+    static func getPretendardFont(size: CGFloat, weight: UIFont.Weight) -> UIFont {
+        let fontName: String
+        switch weight {
+        case .medium:
+            fontName = "Pretendard-Medium"
+        case .semibold:
+            fontName = "Pretendard-SemiBold"
+        case .regular:
+            fontName = "Pretendard-Regular"
+        default:
+            fontName = "Pretendard-Regular"
+        }
+        return UIFont(name: fontName, size: size) ?? UIFont.systemFont(ofSize: size, weight: weight)
+    }
 }
 
 // MARK: Preview

@@ -73,34 +73,6 @@ extension PiCKFontType {
         }
     }
 
-    var lineHeight: CGFloat {
-        switch self {
-
-        case .heading1: return 56
-        case .heading2: return 42
-        case .heading3: return 32
-        case .heading4: return 27
-
-        case .subTitle1: return 24
-        case .subTitle2: return 21
-        case .subTitle3: return 19
-
-        case .body1: return 19
-        case .body2: return 16
-        case .body3: return 13
-
-        case .caption1: return 21
-        case .caption2: return 16
-
-        case .label1: return 21
-        case .label2: return 16
-
-        case .button1: return 21
-        case .button2: return 16
-
-        }
-    }
-
     var defaultColor: Color {
         switch self {
 
