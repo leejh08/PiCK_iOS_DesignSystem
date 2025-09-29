@@ -13,6 +13,7 @@ public struct PiCKTextField: View {
 
     @State private var isEditing: Bool = false
     @State private var isSecure: Bool = false
+    @State private var isVerificationSent: Bool = false
 
     public init(
         text: Binding<String>,
@@ -64,10 +65,13 @@ public struct PiCKTextField: View {
                             .foregroundColor(.Normal.black)
                     }
                 } else if showVerification {
+                    Text("@dsm.hs.kr")
+                        .pickText(type: .caption2, textColor: .Gray.gray500)
                     Button(action: {
                         verificationButtonTapped?()
+                        isVerificationSent = true
                     }) {
-                        Text("인증 코드")
+                        Text(isVerificationSent ? "재발송" : "인증 코드")
                             .pickText(type: .button2, textColor: .Main.main900)
                             .padding(.horizontal, 12)
                             .padding(.vertical, 4)
@@ -90,7 +94,7 @@ public struct PiCKTextField: View {
 
             if let errorMessage = errorMessage, !errorMessage.isEmpty {
                 Text(errorMessage)
-                    .pickText(type: .caption2, textColor: .Error.error)
+                    .pickText(type: .body1, textColor: .Error.error)
                     .frame(maxWidth: .infinity, alignment: .trailing)
             }
         }
