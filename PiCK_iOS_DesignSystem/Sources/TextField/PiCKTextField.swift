@@ -72,10 +72,10 @@ public struct PiCKTextField: View {
                         isVerificationSent = true
                     }) {
                         Text(isVerificationSent ? "재발송" : "인증 코드")
-                            .pickText(type: .button2, textColor: .Main.main900)
+                            .pickText(type: .button2, textColor: .Primary.primary900)
                             .padding(.horizontal, 12)
                             .padding(.vertical, 4)
-                            .background(Color.Main.main50)
+                            .background(Color.Primary.primary50)
                             .cornerRadius(5)
                     }
                 } else if showEmail {
@@ -104,7 +104,7 @@ public struct PiCKTextField: View {
         if errorMessage != nil {
             return .Error.error
         } else if isEditing {
-            return .Main.main500
+            return .Primary.primary500
         } else {
             return .clear
         }

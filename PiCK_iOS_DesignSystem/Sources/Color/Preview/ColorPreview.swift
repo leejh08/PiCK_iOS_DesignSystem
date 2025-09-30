@@ -29,20 +29,20 @@ struct ColorPreviewContent: View {
                     ]
                 )
                 
-                // Main Colors
+                // Primary Colors
                 ColorSectionView(
-                    title: "Main",
+                    title: "Primary",
                     colors: [
-                        ("Main 50", Color.Main.main50),
-                        ("Main 100", Color.Main.main100),
-                        ("Main 200", Color.Main.main200),
-                        ("Main 300", Color.Main.main300),
-                        ("Main 400", Color.Main.main400),
-                        ("Main 500", Color.Main.main500),
-                        ("Main 600", Color.Main.main600),
-                        ("Main 700", Color.Main.main700),
-                        ("Main 800", Color.Main.main800),
-                        ("Main 900", Color.Main.main900)
+                        ("Primary 50", Color.Primary.primary50),
+                        ("Primary 100", Color.Primary.primary100),
+                        ("Primary 200", Color.Primary.primary200),
+                        ("Primary 300", Color.Primary.primary300),
+                        ("Primary 400", Color.Primary.primary400),
+                        ("Primary 500", Color.Primary.primary500),
+                        ("Primary 600", Color.Primary.primary600),
+                        ("Primary 700", Color.Primary.primary700),
+                        ("Primary 800", Color.Primary.primary800),
+                        ("Primary 900", Color.Primary.primary900)
                     ]
                 )
                 
