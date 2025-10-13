@@ -4,6 +4,7 @@ import SwiftUI
 public struct PiCKImage {
     public static let onboardingLogo = Image("onboardingLogo", bundle: .module)
     public static let pickLogo = Image("pickLogo", bundle: .module)
+    public static let adminLogo = Image("adminLogo", bundle: .module)
     public static let alert = Image("alert", bundle: .module)
     public static let bottomArrow = Image("bottomArrow", bundle: .module)
     public static let bug = Image("bug", bundle: .module)
