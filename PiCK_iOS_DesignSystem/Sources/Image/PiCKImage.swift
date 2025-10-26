@@ -41,4 +41,6 @@ public struct PiCKImage {
     public static let scheduleIcon = Image("scheduleIcon", bundle: .module)
     public static let schoolMealIcon = Image("schoolMealIcon", bundle: .module)
     public static let beforeOuting = Image("beforeOuting", bundle: .module)
+    public static let book = Image("book", bundle: .module)
+    public static let location = Image("location", bundle: .module)
 }
