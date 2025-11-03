@@ -1,10 +1,10 @@
 import SwiftUI
 
 #Preview("Selection BottomSheet") {
-    PiCKSelectionBottomSheetPreviewContainer()
+    ApplyBottomSheetPreviewContainer()
 }
 
-private struct PiCKSelectionBottomSheetPreviewContainer: View {
+private struct ApplyBottomSheetPreviewContainer: View {
     @State private var isPresented = true
     @State private var selectedOption: String = ""
 
@@ -28,7 +28,7 @@ private struct PiCKSelectionBottomSheetPreviewContainer: View {
             .padding(.top, 100)
 
             if isPresented {
-                PiCKSelectionBottomSheet(
+                ApplyBottomSheet(
                     isPresented: $isPresented
                 ) { option in
                     switch option {

@@ -1,6 +1,6 @@
 import SwiftUI
 
-public struct PiCKSelectionBottomSheet: View {
+public struct ApplyBottomSheet: View {
     @Binding public var isPresented: Bool
     @State private var selectedOption: SelectionOption = .outgoing
     public var onComplete: (SelectionOption) -> Void
