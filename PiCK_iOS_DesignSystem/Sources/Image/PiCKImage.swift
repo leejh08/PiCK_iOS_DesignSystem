@@ -11,6 +11,8 @@ public struct PiCKImage {
     public static let calendar = Image("calendar", bundle: .module)
     public static let changePassword = Image("changePassword", bundle: .module)
     public static let check = Image("check", bundle: .module)
+    public static let checkBoxOff = Image("checkBoxOff", bundle: .module)
+    public static let checkBoxOn = Image("checkBoxOn", bundle: .module)
     public static let classRoomMove = Image("classRoomMove", bundle: .module)
     public static let defaultTimeTable1 = Image("defaultTimeTable1", bundle: .module)
     public static let displayMode = Image("displayMode", bundle: .module)
