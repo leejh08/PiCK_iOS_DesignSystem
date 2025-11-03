@@ -30,8 +30,8 @@
 		78242330D218329D43C2DF82 /* Normal.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC460CA28A96D2132A7727C4 /* Normal.swift */; };
 		794FA733A0B19D71091F6A69 /* ImagePreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB51862DF4103395FB8CAA14 /* ImagePreview.swift */; };
 		7A4EB7FE1803A1AC9EAAD873 /* PiCKFontType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BA8B10810A90A7A52E0B01 /* PiCKFontType.swift */; };
-		88A1C0772EB849EE00DEEA61 /* ClassroomBottomSheet+Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A1C0762EB849EC00DEEA61 /* ClassroomBottomSheet+Preview.swift */; };
-		88A1C0792EB84A0500DEEA61 /* ClassroomBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A1C0782EB849F300DEEA61 /* ClassroomBottomSheet.swift */; };
+		88A1C0772EB849EE00DEEA61 /* DualPickerBottomSheet+Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A1C0762EB849EC00DEEA61 /* DualPickerBottomSheet+Preview.swift */; };
+		88A1C0792EB84A0500DEEA61 /* DualPickerBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A1C0782EB849F300DEEA61 /* DualPickerBottomSheet.swift */; };
 		9A0E87C054AB4AC62C6ECFAC /* ApplyBottomSheet+Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C0117F8D2D4408423987A6 /* ApplyBottomSheet+Preview.swift */; };
 		9CC41982615A34D2279D19F9 /* PiCKErrorToast+Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348FD0EDA18DE92847676F8B /* PiCKErrorToast+Preview.swift */; };
 		9CEEE4B7C57A6B604EE3D2E2 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8CDC4CA69F1C02E7235E821 /* Color.xcassets */; };
@@ -103,8 +103,8 @@
 		80C0117F8D2D4408423987A6 /* ApplyBottomSheet+Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ApplyBottomSheet+Preview.swift"; sourceTree = "<group>"; };
 		816E88F5E8BA403D9F18A646 /* PiCKConfirmPopUp+Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PiCKConfirmPopUp+Preview.swift"; sourceTree = "<group>"; };
 		88A1C0712EB844C300DEEA61 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/iOSSupport/System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		88A1C0762EB849EC00DEEA61 /* ClassroomBottomSheet+Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ClassroomBottomSheet+Preview.swift"; sourceTree = "<group>"; };
-		88A1C0782EB849F300DEEA61 /* ClassroomBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassroomBottomSheet.swift; sourceTree = "<group>"; };
+		88A1C0762EB849EC00DEEA61 /* DualPickerBottomSheet+Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DualPickerBottomSheet+Preview.swift"; sourceTree = "<group>"; };
+		88A1C0782EB849F300DEEA61 /* DualPickerBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DualPickerBottomSheet.swift; sourceTree = "<group>"; };
 		925FBF646C7ED608B7EB78A9 /* LoginView_Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView_Preview.swift; sourceTree = "<group>"; };
 		97D2D2B41A526B9DA73785FC /* PiCKButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PiCKButton.swift; sourceTree = "<group>"; };
 		9ADF8D66026AB67FCA3DA457 /* OFL.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
@@ -320,19 +320,19 @@
 			path = Apply;
 			sourceTree = "<group>";
 		};
-		88A1C0742EB849CF00DEEA61 /* Classroom */ = {
+		88A1C0742EB849CF00DEEA61 /* DualPicker */ = {
 			isa = PBXGroup;
 			children = (
-				88A1C0782EB849F300DEEA61 /* ClassroomBottomSheet.swift */,
+				88A1C0782EB849F300DEEA61 /* DualPickerBottomSheet.swift */,
 				88A1C0752EB849E200DEEA61 /* Preview */,
 			);
-			path = Classroom;
+			path = DualPicker;
 			sourceTree = "<group>";
 		};
 		88A1C0752EB849E200DEEA61 /* Preview */ = {
 			isa = PBXGroup;
 			children = (
-				88A1C0762EB849EC00DEEA61 /* ClassroomBottomSheet+Preview.swift */,
+				88A1C0762EB849EC00DEEA61 /* DualPickerBottomSheet+Preview.swift */,
 			);
 			path = Preview;
 			sourceTree = "<group>";
@@ -463,7 +463,7 @@
 		F3B440925B3F3C5C7621D92A /* BottomSheet */ = {
 			isa = PBXGroup;
 			children = (
-				88A1C0742EB849CF00DEEA61 /* Classroom */,
+				88A1C0742EB849CF00DEEA61 /* DualPicker */,
 				88A1C0732EB848DF00DEEA61 /* Apply */,
 			);
 			path = BottomSheet;
@@ -601,7 +601,7 @@
 				35F000A03F72D11C40AF3A69 /* PiCK_iOS_DesignSystem.swift in Sources */,
 				AE52DDD66797B227479577C5 /* ApplyBottomSheet.swift in Sources */,
 				9A0E87C054AB4AC62C6ECFAC /* ApplyBottomSheet+Preview.swift in Sources */,
-				88A1C0772EB849EE00DEEA61 /* ClassroomBottomSheet+Preview.swift in Sources */,
+				88A1C0772EB849EE00DEEA61 /* DualPickerBottomSheet+Preview.swift in Sources */,
 				2CA9BB2F0B8B5AD5C3027178 /* PiCKButton.swift in Sources */,
 				40DE97F3A154444583BED229 /* PiCKButton+Preview.swift in Sources */,
 				C0585190182B702E48966F26 /* PiCKUnderlineButton.swift in Sources */,
@@ -623,7 +623,7 @@
 				4565020158941124CA12390F /* PiCKTextField+Preview.swift in Sources */,
 				76C0BEC457591C408334E79B /* PiCKErrorToast.swift in Sources */,
 				9CC41982615A34D2279D19F9 /* PiCKErrorToast+Preview.swift in Sources */,
-				88A1C0792EB84A0500DEEA61 /* ClassroomBottomSheet.swift in Sources */,
+				88A1C0792EB84A0500DEEA61 /* DualPickerBottomSheet.swift in Sources */,
 				7A4EB7FE1803A1AC9EAAD873 /* PiCKFontType.swift in Sources */,
 				5A7365EBF66CA422DF1CFCCD /* PiCKText.swift in Sources */,
 				74CCC7A2EC7641FE30E14F4A /* PiCKTextPreview.swift in Sources */,

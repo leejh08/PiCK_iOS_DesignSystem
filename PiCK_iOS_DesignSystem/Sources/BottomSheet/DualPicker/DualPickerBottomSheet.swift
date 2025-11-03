@@ -1,27 +1,46 @@
 import SwiftUI
 
-public struct ClassroomBottomSheet: View {
+public struct DualPickerBottomSheet: View {
     @Binding public var isPresented: Bool
-    @Binding var grade: Int
-    @Binding var `class`: Int
+    @Binding var firstValue: Int
+    @Binding var secondValue: Int
+    public var title: String
+    public var firstLabel: String
+    public var secondLabel: String
+    public var firstRange: ClosedRange<Int>
+    public var secondRange: ClosedRange<Int>
+    public var buttonText: String
     public var onComplete: (Int, Int) -> Void
 
     public init(
         isPresented: Binding<Bool>,
-        grade: Binding<Int>,
-        class: Binding<Int>,
+        firstValue: Binding<Int>,
+        secondValue: Binding<Int>,
+        title: String,
+        firstLabel: String,
+        secondLabel: String,
+        firstRange: ClosedRange<Int>,
+        secondRange: ClosedRange<Int>,
+        buttonText: String = "선택 완료",
         onComplete: @escaping (Int, Int) -> Void
     ) {
         self._isPresented = isPresented
-        self._grade = grade
-        self._class = `class`
+        self._firstValue = firstValue
+        self._secondValue = secondValue
+        self.title = title
+        self.firstLabel = firstLabel
+        self.secondLabel = secondLabel
+        self.firstRange = firstRange
+        self.secondRange = secondRange
+        self.buttonText = buttonText
         self.onComplete = onComplete
         UIPickerView.appearance().backgroundColor = .clear
-        if grade.wrappedValue < 1 || grade.wrappedValue > 3 {
-            grade.wrappedValue = 1
+
+        if !firstRange.contains(firstValue.wrappedValue) {
+            firstValue.wrappedValue = firstRange.lowerBound
         }
-        if `class`.wrappedValue < 1 || `class`.wrappedValue > 4 {
-            `class`.wrappedValue = 1
+        if !secondRange.contains(secondValue.wrappedValue) {
+            secondValue.wrappedValue = secondRange.lowerBound
         }
     }
 
@@ -32,9 +51,8 @@ public struct ClassroomBottomSheet: View {
                 .frame(width: 40, height: 5)
                 .padding(.top, 12)
 
-
             HStack {
-                Text("학년과 반을 선택해주세요")
+                Text(title)
                     .pickText(type: .label1, textColor: .Normal.black)
                 Spacer()
             }
@@ -51,8 +69,8 @@ public struct ClassroomBottomSheet: View {
 
                 HStack(spacing: 30) {
                     HStack(spacing: 0) {
-                        Picker("", selection: $grade) {
-                            ForEach(1...3, id: \.self) { num in
+                        Picker("", selection: $firstValue) {
+                            ForEach(Array(firstRange), id: \.self) { num in
                                 Text("\(num)")
                                     .pickText(type: .subTitle1, textColor: .Normal.black)
                             }
@@ -62,7 +80,7 @@ public struct ClassroomBottomSheet: View {
                         .clipped()
                         .compositingGroup()
                         
-                        Text("학년")
+                        Text(firstLabel)
                             .pickText(type: .subTitle1, textColor: .Normal.black)
                             .offset(x: -15)
                     }
@@ -70,9 +88,9 @@ public struct ClassroomBottomSheet: View {
                     Text("-")
                         .pickText(type: .heading3, textColor: .Normal.black)
 
-                    HStack(spacing: 4) {
-                        Picker("", selection: $class) {
-                            ForEach(1...4, id: \.self) { num in
+                    HStack(spacing: 0) {
+                        Picker("", selection: $secondValue) {
+                            ForEach(Array(secondRange), id: \.self) { num in
                                 Text("\(num)")
                                     .pickText(type: .subTitle1, textColor: .Normal.black)
                             }
@@ -82,8 +100,9 @@ public struct ClassroomBottomSheet: View {
                         .clipped()
                         .compositingGroup()
 
-                        Text("반")
+                        Text(secondLabel)
                             .pickText(type: .subTitle1, textColor: .Normal.black)
+                            .offset(x: -15)
                     }
                 }
                 .onAppear { removePickerBackground() }
@@ -93,11 +112,11 @@ public struct ClassroomBottomSheet: View {
             Spacer().frame(minHeight: 20)
 
             PiCKButton(
-                buttonText: "선택 완료",
+                buttonText: buttonText,
                 isEnabled: true,
                 height: 47
             ) {
-                onComplete(grade, `class`)
+                onComplete(firstValue, secondValue)
                 isPresented = false
             }
             .padding(.horizontal, 24)
@@ -108,7 +127,6 @@ public struct ClassroomBottomSheet: View {
         .cornerRadius(20, corners: [.topLeft, .topRight])
         .ignoresSafeArea(edges: .bottom)
     }
-
 
     private func removePickerBackground() {
         DispatchQueue.main.async {
@@ -131,4 +149,3 @@ public struct ClassroomBottomSheet: View {
         }
     }
 }
-
