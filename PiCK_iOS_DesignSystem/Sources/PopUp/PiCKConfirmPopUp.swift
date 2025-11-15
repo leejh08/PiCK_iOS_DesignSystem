@@ -46,8 +46,7 @@ public struct PiCKConfirmPopUp: View {
                 .pickText(type: .body1, textColor: .Gray.gray600)
                 .padding(.top, 12)
                 .padding(.leading, 20)
-
-            Spacer()
+                .padding(.bottom, 16)
 
             HStack(spacing: 8) {
                 Button {
@@ -77,7 +76,7 @@ public struct PiCKConfirmPopUp: View {
             .padding(.horizontal, 16)
             .padding(.bottom, 16)
         }
-        .frame(width: 330, height: 147)
+        .frame(width: 330)
         .background(Color.Normal.white)
         .cornerRadius(16)
         .shadow(color: Color.black.opacity(0.1), radius: 10, x: 0, y: 4)
