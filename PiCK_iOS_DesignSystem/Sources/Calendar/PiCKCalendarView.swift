@@ -184,6 +184,15 @@ public struct PiCKCalendarView: View {
                 dates.append(date)
             }
         }
+        let totalDays = dates.count
+        let remainingDays = 7 - (totalDays % 7)
+        if remainingDays < 7, let lastDate = dates.last {
+            for i in 1...remainingDays {
+                if let date = calendar.date(byAdding: .day, value: i, to: lastDate) {
+                    dates.append(date)
+                }
+            }
+        }
 
         return dates
     }
