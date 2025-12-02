@@ -5,6 +5,14 @@ public struct ClassroomFilterButton: View {
     public let selectedClassroom: String
     public let onTap: () -> Void
 
+    public init(
+        selectedClassroom: String,
+        onTap: @escaping () -> Void
+    ) {
+        self.selectedClassroom = selectedClassroom
+        self.onTap = onTap
+    }
+
     public var body: some View {
         Button {
             onTap()
