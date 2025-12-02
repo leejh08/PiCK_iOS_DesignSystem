@@ -122,30 +122,55 @@ public struct DualPickerBottomSheet: View {
             .padding(.horizontal, 24)
             .padding(.bottom, 28 + (UIApplication.shared.windows.first?.safeAreaInsets.bottom ?? 0))
         }
-        .frame(maxHeight: UIScreen.main.bounds.height * 0.5)
+        .frame(maxWidth: .infinity)
         .background(Color.Normal.white)
         .cornerRadius(20, corners: [.topLeft, .topRight])
-        .ignoresSafeArea(edges: .bottom)
     }
 
     private func removePickerBackground() {
         DispatchQueue.main.async {
-            UIPickerView.appearance().backgroundColor = .clear
+        UIPickerView.appearance().backgroundColor = .clear
 
-            guard let window = UIApplication.shared.connectedScenes
-                .compactMap({ $0 as? UIWindowScene })
-                .flatMap({ $0.windows })
-                .first(where: { $0.isKeyWindow }) else { return }
+        guard let window = UIApplication.shared.connectedScenes
+            .compactMap({ $0 as? UIWindowScene })
+            .flatMap({ $0.windows })
+            .first(where: { $0.isKeyWindow }) else { return }
 
-            func clearBackground(in view: UIView) {
-                if let pickerView = view as? UIPickerView {
-                    pickerView.backgroundColor = .clear
-                    pickerView.subviews.forEach { $0.backgroundColor = .clear }
-                }
-                view.subviews.forEach { clearBackground(in: $0) }
+        func clearBackground(in view: UIView) {
+            if let pickerView = view as? UIPickerView {
+                pickerView.backgroundColor = .clear
+                pickerView.subviews.forEach { $0.backgroundColor = .clear }
             }
-
-            clearBackground(in: window)
+            view.subviews.forEach { clearBackground(in: $0) }
         }
+
+        clearBackground(in: window)
+        }
+    }
+}
+
+#Preview {
+    @State var isPresented = true
+    @State var first = "전체"
+    @State var second = "전체"
+
+    return ZStack {
+        Color.gray.opacity(0.3).ignoresSafeArea()
+        
+        VStack {
+            Spacer()
+            DualPickerBottomSheet(
+                isPresented: $isPresented,
+                firstValue: $first,
+                secondValue: $second,
+                title: "학년 / 반 선택",
+                firstLabel: "학년",
+                secondLabel: "반",
+                firstOptions: ["전체", "1", "2", "3"],
+                secondOptions: ["전체", "1", "2", "3", "4"],
+                onComplete: { _, _ in }
+            )
+        }
+        .ignoresSafeArea()
     }
 }

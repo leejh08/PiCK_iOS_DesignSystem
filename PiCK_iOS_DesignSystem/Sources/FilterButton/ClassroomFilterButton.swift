@@ -41,33 +41,48 @@ private struct PreviewWrapper: View {
     @State private var isApplyBottomSheetPresented = false
 
     var body: some View {
-        ClassroomFilterButton(
-            selectedClassroom: "\(firstValue)-\(secondValue)",
-            onTap: { isApplyBottomSheetPresented = true }
-        )
-        .sheet(isPresented: $isApplyBottomSheetPresented) {
-            AnyView(
-                DualPickerBottomSheet(
-                    isPresented: $isApplyBottomSheetPresented,
-                    firstValue: $firstValue,
-                    secondValue: $secondValue,
-                    title: "선택",
-                    firstLabel: "학년",
-                    secondLabel: "반",
-                    firstOptions: ["전체", "1", "2", "3"],
-                    secondOptions: ["전체", "1", "2", "3", "4"],
-                    onComplete: { first, second in
-                        if first == "전체" || second == "전체" {
-                            firstValue = "전체"
-                            secondValue = "전체"
-                        } else {
-                            firstValue = first
-                            secondValue = second
-                        }
-                    }
-                )
+        ZStack {
+            ClassroomFilterButton(
+                selectedClassroom: "\(firstValue)-\(secondValue)",
+                onTap: { isApplyBottomSheetPresented = true }
             )
+
+            if isApplyBottomSheetPresented {
+                GeometryReader { geometry in
+                    ZStack(alignment: .bottom) {
+                        Color.black.opacity(0.4)
+                            .ignoresSafeArea()
+                            .onTapGesture {
+                                isApplyBottomSheetPresented = false
+                            }
+                        
+                        DualPickerBottomSheet(
+                            isPresented: $isApplyBottomSheetPresented,
+                            firstValue: $firstValue,
+                            secondValue: $secondValue,
+                            title: "선택",
+                            firstLabel: "학년",
+                            secondLabel: "반",
+                            firstOptions: ["전체", "1", "2", "3"],
+                            secondOptions: ["전체", "1", "2", "3", "4"],
+                            onComplete: { first, second in
+                                if first == "전체" || second == "전체" {
+                                    firstValue = "전체"
+                                    secondValue = "전체"
+                                } else {
+                                    firstValue = first
+                                    secondValue = second
+                                }
+                            }
+                        )
+                        .frame(height: geometry.size.height * 0.33)
+                        .transition(.move(edge: .bottom))
+                    }
+                    .ignoresSafeArea()
+                }
+            }
         }
+        .animation(.easeInOut(duration: 0.3), value: isApplyBottomSheetPresented)
     }
 }
 
