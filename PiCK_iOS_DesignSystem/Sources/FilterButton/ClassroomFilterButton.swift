@@ -2,8 +2,8 @@ import SwiftUI
 import PiCK_iOS_DesignSystem
 
 public struct ClassroomFilterButton: View {
-    let selectedClassroom: String
-    let onTap: () -> Void
+    public let selectedClassroom: String
+    public let onTap: () -> Void
 
     public var body: some View {
         Button {
