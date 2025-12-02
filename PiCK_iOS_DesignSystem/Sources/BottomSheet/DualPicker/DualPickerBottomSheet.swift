@@ -2,27 +2,27 @@ import SwiftUI
 
 public struct DualPickerBottomSheet: View {
     @Binding public var isPresented: Bool
-    @Binding var firstValue: Int
-    @Binding var secondValue: Int
+    @Binding var firstValue: String
+    @Binding var secondValue: String
     public var title: String
     public var firstLabel: String
     public var secondLabel: String
-    public var firstRange: ClosedRange<Int>
-    public var secondRange: ClosedRange<Int>
+    public var firstOptions: [String]
+    public var secondOptions: [String]
     public var buttonText: String
-    public var onComplete: (Int, Int) -> Void
+    public var onComplete: (String, String) -> Void
 
     public init(
         isPresented: Binding<Bool>,
-        firstValue: Binding<Int>,
-        secondValue: Binding<Int>,
+        firstValue: Binding<String>,
+        secondValue: Binding<String>,
         title: String,
         firstLabel: String,
         secondLabel: String,
-        firstRange: ClosedRange<Int>,
-        secondRange: ClosedRange<Int>,
+        firstOptions: [String],
+        secondOptions: [String],
         buttonText: String = "선택 완료",
-        onComplete: @escaping (Int, Int) -> Void
+        onComplete: @escaping (String, String) -> Void
     ) {
         self._isPresented = isPresented
         self._firstValue = firstValue
@@ -30,17 +30,17 @@ public struct DualPickerBottomSheet: View {
         self.title = title
         self.firstLabel = firstLabel
         self.secondLabel = secondLabel
-        self.firstRange = firstRange
-        self.secondRange = secondRange
+        self.firstOptions = firstOptions
+        self.secondOptions = secondOptions
         self.buttonText = buttonText
         self.onComplete = onComplete
         UIPickerView.appearance().backgroundColor = .clear
 
-        if !firstRange.contains(firstValue.wrappedValue) {
-            firstValue.wrappedValue = firstRange.lowerBound
+        if !firstOptions.contains(firstValue.wrappedValue) {
+            firstValue.wrappedValue = firstOptions.first ?? ""
         }
-        if !secondRange.contains(secondValue.wrappedValue) {
-            secondValue.wrappedValue = secondRange.lowerBound
+        if !secondOptions.contains(secondValue.wrappedValue) {
+            secondValue.wrappedValue = secondOptions.first ?? ""
         }
     }
 
@@ -70,13 +70,13 @@ public struct DualPickerBottomSheet: View {
                 HStack(spacing: 30) {
                     HStack(spacing: 0) {
                         Picker("", selection: $firstValue) {
-                            ForEach(Array(firstRange), id: \.self) { num in
-                                Text("\(num)")
+                            ForEach(firstOptions, id: \.self) { option in
+                                Text(option)
                                     .pickText(type: .subTitle1, textColor: .Normal.black)
                             }
                         }
                         .pickerStyle(.wheel)
-                        .frame(width: 50)
+                        .frame(width: 80)
                         .clipped()
                         .compositingGroup()
                         
@@ -90,13 +90,13 @@ public struct DualPickerBottomSheet: View {
 
                     HStack(spacing: 0) {
                         Picker("", selection: $secondValue) {
-                            ForEach(Array(secondRange), id: \.self) { num in
-                                Text("\(num)")
+                            ForEach(secondOptions, id: \.self) { option in
+                                Text(option)
                                     .pickText(type: .subTitle1, textColor: .Normal.black)
                             }
                         }
                         .pickerStyle(.wheel)
-                        .frame(width: 50)
+                        .frame(width: 80)
                         .clipped()
                         .compositingGroup()
 

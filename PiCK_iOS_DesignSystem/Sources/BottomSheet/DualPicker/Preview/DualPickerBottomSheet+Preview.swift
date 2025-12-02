@@ -7,17 +7,31 @@ extension DualPickerBottomSheet {
         klass: Binding<Int>,
         onComplete: @escaping (Int, Int) -> Void
     ) -> DualPickerBottomSheet {
-        DualPickerBottomSheet(
+        let firstOptions = ["1", "2", "3"]
+        let secondOptions = ["1", "2", "3", "4"]
+
+        let firstValue = Binding<String>(
+            get: { String(grade.wrappedValue) },
+            set: { grade.wrappedValue = Int($0) ?? grade.wrappedValue }
+        )
+        let secondValue = Binding<String>(
+            get: { String(klass.wrappedValue) },
+            set: { klass.wrappedValue = Int($0) ?? klass.wrappedValue }
+        )
+
+        return DualPickerBottomSheet(
             isPresented: isPresented,
-            firstValue: grade,
-            secondValue: klass,
+            firstValue: firstValue,
+            secondValue: secondValue,
             title: "학년과 반을 선택해주세요",
             firstLabel: "학년",
             secondLabel: "반",
-            firstRange: 1...3,
-            secondRange: 1...4,
+            firstOptions: firstOptions,
+            secondOptions: secondOptions,
             buttonText: "선택 완료",
-            onComplete: onComplete
+            onComplete: { first, second in
+                onComplete(Int(first) ?? grade.wrappedValue, Int(second) ?? klass.wrappedValue)
+            }
         )
     }
 
@@ -27,17 +41,31 @@ extension DualPickerBottomSheet {
         endHour: Binding<Int>,
         onComplete: @escaping (Int, Int) -> Void
     ) -> DualPickerBottomSheet {
-        DualPickerBottomSheet(
+        let firstOptions = (5...12).map { String($0) }
+        let secondOptions = (5...12).map { String($0) }
+
+        let firstValue = Binding<String>(
+            get: { String(startHour.wrappedValue) },
+            set: { startHour.wrappedValue = Int($0) ?? startHour.wrappedValue }
+        )
+        let secondValue = Binding<String>(
+            get: { String(endHour.wrappedValue) },
+            set: { endHour.wrappedValue = Int($0) ?? endHour.wrappedValue }
+        )
+
+        return DualPickerBottomSheet(
             isPresented: isPresented,
-            firstValue: startHour,
-            secondValue: endHour,
+            firstValue: firstValue,
+            secondValue: secondValue,
             title: "교실 이동 시간을 선택해주세요",
             firstLabel: "교시",
             secondLabel: "교시",
-            firstRange: 5...12,
-            secondRange: 5...12,
+            firstOptions: firstOptions,
+            secondOptions: secondOptions,
             buttonText: "신청하기",
-            onComplete: onComplete
+            onComplete: { first, second in
+                onComplete(Int(first) ?? startHour.wrappedValue, Int(second) ?? endHour.wrappedValue)
+            }
         )
     }
 }
