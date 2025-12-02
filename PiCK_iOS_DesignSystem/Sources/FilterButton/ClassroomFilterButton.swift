@@ -75,14 +75,14 @@ private struct PreviewWrapper: View {
                                 }
                             }
                         )
-                        .frame(height: geometry.size.height * 0.33)
+                        .frame(height: geometry.size.height * 0.45)
                         .transition(.move(edge: .bottom))
                     }
                     .ignoresSafeArea()
                 }
             }
         }
-        .animation(.easeInOut(duration: 0.3), value: isApplyBottomSheetPresented)
+        .animation(.easeInOut(duration: 0.45), value: isApplyBottomSheetPresented)
     }
 }
 
