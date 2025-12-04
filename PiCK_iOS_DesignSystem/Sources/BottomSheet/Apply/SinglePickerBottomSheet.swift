@@ -1,20 +1,21 @@
 import SwiftUI
 
-public struct ApplyBottomSheet: View {
+public struct SinglePickerBottomSheet: View {
     @Binding public var isPresented: Bool
-    @State private var selectedOption: SelectionOption = .outgoing
-    public var onComplete: (SelectionOption) -> Void
-    
-    public enum SelectionOption: String, CaseIterable {
-        case outgoing = "외출 수락"
-        case classroomMove = "교실 이동"
-    }
+    public var title: String
+    public var options: [String]
+    @State private var selectedIndex: Int = 0
+    public var onComplete: (String) -> Void
     
     public init(
         isPresented: Binding<Bool>,
-        onComplete: @escaping (SelectionOption) -> Void
+        title: String,
+        options: [String],
+        onComplete: @escaping (String) -> Void
     ) {
         self._isPresented = isPresented
+        self.title = title
+        self.options = options
         self.onComplete = onComplete
         UIPickerView.appearance().backgroundColor = .clear
     }
@@ -27,7 +28,7 @@ public struct ApplyBottomSheet: View {
                 .padding(.top, 12)
 
             HStack {
-                Text("수락할 활동을 선택해주세요")
+                Text(title)
                     .pickText(type: .label1, textColor: .Normal.black)
                 Spacer()
             }
@@ -43,11 +44,11 @@ public struct ApplyBottomSheet: View {
                     .frame(height: 32)
                     .padding(.horizontal, 24)
                 
-                Picker("", selection: $selectedOption) {
-                    ForEach(SelectionOption.allCases, id: \.self) { option in
-                        Text(option.rawValue)
+                Picker("", selection: $selectedIndex) {
+                    ForEach(options.indices, id: \.self) { idx in
+                        Text(options[idx])
                             .pickText(type: .subTitle1, textColor: .Normal.black)
-                            .tag(option)
+                            .tag(idx)
                     }
                 }
                 .pickerStyle(.wheel)
@@ -64,7 +65,7 @@ public struct ApplyBottomSheet: View {
                 isEnabled: true,
                 height: 47
             ) {
-                onComplete(selectedOption)
+                onComplete(options[selectedIndex])
                 isPresented = false
             }
             .padding(.horizontal, 24)

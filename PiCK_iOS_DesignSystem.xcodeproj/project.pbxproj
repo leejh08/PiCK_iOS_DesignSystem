@@ -14,6 +14,7 @@
 		2A360044ACC7B48B234BD552 /* BackGround.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3965469248AAED0FC9297BCC /* BackGround.swift */; };
 		2CA9BB2F0B8B5AD5C3027178 /* PiCKButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D2D2B41A526B9DA73785FC /* PiCKButton.swift */; };
 		2D1AF12CD96C86EBD0C7654D /* PiCKUnderlineButton+Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597D9BAAB6950B7986DB9E3B /* PiCKUnderlineButton+Preview.swift */; };
+		311F4860D352F091C333CFAE /* ClassroomFilterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B023AB6DC59E44C024D91BC /* ClassroomFilterButton.swift */; };
 		3293AA6103FA4C6EDC9BF428 /* Pretendard-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7224757AF16734C973938741 /* Pretendard-Regular.ttf */; };
 		35F000A03F72D11C40AF3A69 /* PiCK_iOS_DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CC98A3EDB4DC537684DC45F /* PiCK_iOS_DesignSystem.swift */; };
 		39E0A0FE1A241D6D83AA0147 /* LoginView_Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925FBF646C7ED608B7EB78A9 /* LoginView_Preview.swift */; };
@@ -34,10 +35,9 @@
 		794FA733A0B19D71091F6A69 /* ImagePreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB51862DF4103395FB8CAA14 /* ImagePreview.swift */; };
 		7A4EB7FE1803A1AC9EAAD873 /* PiCKFontType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BA8B10810A90A7A52E0B01 /* PiCKFontType.swift */; };
 		827E749D13F4EF3C7B4AB242 /* PiCKAcceptStudentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D501F5088C9FF549C2DD1C /* PiCKAcceptStudentCell.swift */; };
-		884842122EDE807C003D5D60 /* ClassroomFilterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884842112EDE807B003D5D60 /* ClassroomFilterButton.swift */; };
 		9CC41982615A34D2279D19F9 /* PiCKErrorToast+Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348FD0EDA18DE92847676F8B /* PiCKErrorToast+Preview.swift */; };
 		9CEEE4B7C57A6B604EE3D2E2 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8CDC4CA69F1C02E7235E821 /* Color.xcassets */; };
-		9FF67F8302CBC29A3CE8BAC6 /* ApplyBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F800712A74F421BBA33138 /* ApplyBottomSheet.swift */; };
+		9FF67F8302CBC29A3CE8BAC6 /* SinglePickerBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F800712A74F421BBA33138 /* SinglePickerBottomSheet.swift */; };
 		A1E743C2F99CC19D97A19ABF /* PiCKMainNavigationBar+Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F6741B659A5276D9D07086 /* PiCKMainNavigationBar+Preview.swift */; };
 		A2BDA76D03B8ED93E0F9651D /* DualPickerBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B87171DC2D1E895084524C3 /* DualPickerBottomSheet.swift */; };
 		AB7A88D14E2D3D1C0196D580 /* Pretendard-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 24DACE845FA1F776B2244928 /* Pretendard-SemiBold.ttf */; };
@@ -107,14 +107,14 @@
 		5E4D77599BF10E2EE23C8007 /* whiteLottie.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = whiteLottie.json; sourceTree = "<group>"; };
 		646B665074856865A3026E0A /* PiCKTextPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PiCKTextPreview.swift; sourceTree = "<group>"; };
 		7224757AF16734C973938741 /* Pretendard-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.ttf"; sourceTree = "<group>"; };
-		74F800712A74F421BBA33138 /* ApplyBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplyBottomSheet.swift; sourceTree = "<group>"; };
+		74F800712A74F421BBA33138 /* SinglePickerBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SinglePickerBottomSheet.swift; sourceTree = "<group>"; };
 		77556DAFB97006109A5B7C26 /* UIColorToColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorToColor.swift; sourceTree = "<group>"; };
 		78C91BFEEE480B525BD396F3 /* PiCKTextField+Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PiCKTextField+Preview.swift"; sourceTree = "<group>"; };
 		816E88F5E8BA403D9F18A646 /* PiCKConfirmPopUp+Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PiCKConfirmPopUp+Preview.swift"; sourceTree = "<group>"; };
-		884842112EDE807B003D5D60 /* ClassroomFilterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassroomFilterButton.swift; sourceTree = "<group>"; };
 		925FBF646C7ED608B7EB78A9 /* LoginView_Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView_Preview.swift; sourceTree = "<group>"; };
 		97D2D2B41A526B9DA73785FC /* PiCKButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PiCKButton.swift; sourceTree = "<group>"; };
 		9ADF8D66026AB67FCA3DA457 /* OFL.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
+		9B023AB6DC59E44C024D91BC /* ClassroomFilterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassroomFilterButton.swift; sourceTree = "<group>"; };
 		9D8A652534C827651CDDB523 /* TuistBundle+PiCKIOSDesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TuistBundle+PiCKIOSDesignSystem.swift"; sourceTree = "<group>"; };
 		9E5442439AEAB53F1966DD36 /* darkLottie.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = darkLottie.json; sourceTree = "<group>"; };
 		A55D7C1B07FD83B335AE915A /* PiCK_iOS_DesignSystem_PiCK_iOS_DesignSystem.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PiCK_iOS_DesignSystem_PiCK_iOS_DesignSystem.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -339,19 +339,11 @@
 			path = Preview;
 			sourceTree = "<group>";
 		};
-		884842102EDE806C003D5D60 /* FilterButton */ = {
-			isa = PBXGroup;
-			children = (
-				884842112EDE807B003D5D60 /* ClassroomFilterButton.swift */,
-			);
-			path = FilterButton;
-			sourceTree = "<group>";
-		};
 		9461031A0E2AD3446F7846F2 /* Apply */ = {
 			isa = PBXGroup;
 			children = (
 				F5B3D9C28830655F6CA558EA /* Preview */,
-				74F800712A74F421BBA33138 /* ApplyBottomSheet.swift */,
+				74F800712A74F421BBA33138 /* SinglePickerBottomSheet.swift */,
 			);
 			path = Apply;
 			sourceTree = "<group>";
@@ -377,12 +369,12 @@
 		9DEE6C8140A0DEE7D34F3F71 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				884842102EDE806C003D5D60 /* FilterButton */,
 				F3B440925B3F3C5C7621D92A /* BottomSheet */,
 				A11F2E25F44BD41F20403AAF /* Button */,
 				5208EF0BB1C53573D7424479 /* Calendar */,
 				FE92C1DCFE7F6966EDC32F51 /* Cell */,
 				C3428AE878D2A0F90EC71747 /* Color */,
+				A6358356DED9CE3FD3621CCE /* FilterButton */,
 				2E9D5239DA5483ED0344A219 /* Image */,
 				124850DA5672FEC35612CF6E /* Navigation */,
 				9BF681DD012B2D8264A1FAC3 /* PopUp */,
@@ -416,6 +408,14 @@
 				28F6741B659A5276D9D07086 /* PiCKMainNavigationBar+Preview.swift */,
 			);
 			path = Preview;
+			sourceTree = "<group>";
+		};
+		A6358356DED9CE3FD3621CCE /* FilterButton */ = {
+			isa = PBXGroup;
+			children = (
+				9B023AB6DC59E44C024D91BC /* ClassroomFilterButton.swift */,
+			);
+			path = FilterButton;
 			sourceTree = "<group>";
 		};
 		AD27A84B1BA54515F2F1F85B /* Preview */ = {
@@ -647,8 +647,7 @@
 			files = (
 				1C26A1FE416D2FC1FA2785ED /* TuistBundle+PiCKIOSDesignSystem.swift in Sources */,
 				35F000A03F72D11C40AF3A69 /* PiCK_iOS_DesignSystem.swift in Sources */,
-				9FF67F8302CBC29A3CE8BAC6 /* ApplyBottomSheet.swift in Sources */,
-				884842122EDE807C003D5D60 /* ClassroomFilterButton.swift in Sources */,
+				9FF67F8302CBC29A3CE8BAC6 /* SinglePickerBottomSheet.swift in Sources */,
 				4F8645107A0CDBB5585B9AD2 /* ApplyBottomSheet+Preview.swift in Sources */,
 				A2BDA76D03B8ED93E0F9651D /* DualPickerBottomSheet.swift in Sources */,
 				6CD9D399D42C0C7FBA6806A6 /* DualPickerBottomSheet+Preview.swift in Sources */,
@@ -666,6 +665,7 @@
 				78242330D218329D43C2DF82 /* Normal.swift in Sources */,
 				22B61D80BB2EDC7429C492ED /* ColorPreview.swift in Sources */,
 				F79F9AFF4900DCFA03561359 /* Primary.swift in Sources */,
+				311F4860D352F091C333CFAE /* ClassroomFilterButton.swift in Sources */,
 				5240FC2AF54D95814AC996AD /* PiCKImage.swift in Sources */,
 				794FA733A0B19D71091F6A69 /* ImagePreview.swift in Sources */,
 				5ED1C16A4AFAFC6663482FC2 /* PiCKMainNavigationBar.swift in Sources */,
