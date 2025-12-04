@@ -28,15 +28,12 @@ private struct ApplyBottomSheetPreviewContainer: View {
             .padding(.top, 100)
 
             if isPresented {
-                ApplyBottomSheet(
-                    isPresented: $isPresented
+                SinglePickerBottomSheet(
+                    isPresented: $isPresented,
+                    title: "수락할 활동을 선택해주세요",
+                    options: ["외출 수락", "교실 이동"]
                 ) { option in
-                    switch option {
-                    case .outgoing:
-                        selectedOption = "외출 수락"
-                    case .classroomMove:
-                        selectedOption = "교실 이동"
-                    }
+                    selectedOption = option
                 }
                 .transition(.move(edge: .bottom))
                 .animation(.easeInOut(duration: 0.3), value: isPresented)
